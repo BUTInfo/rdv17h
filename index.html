@@ -241,32 +241,32 @@
         <script src="script.js"></script>
 		<script src="agenda.js"></script>
 		<script type="module">
-		  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
-		  import { getFirestore, getDocs, collection, setDoc, doc, deleteDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
-          
-          // RENDRE LES FONCTIONS ACCESSIBLES GLOBALEMENT (pour agenda.js)
-          window.getDocs = getDocs;
-          window.collection = collection;
-          window.setDoc = setDoc;
-          window.doc = doc;
-          window.deleteDoc = deleteDoc;
+		    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+		    import { getFirestore, getDocs, collection, setDoc, doc, deleteDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+            
+            // RENDRE LES FONCTIONS ACCESSIBLES GLOBALEMENT (pour agenda.js)
+            window.getDocs = getDocs;
+            window.collection = collection;
+            window.setDoc = setDoc;
+            window.doc = doc;
+            window.deleteDoc = deleteDoc;
 
-		  const firebaseConfig = {
-			apiKey: "AIzaSyAVR-n_rotV-_6hmI5JSEvcsAsmH2-SbDw",
-			authDomain: "agenda-a9fa6.firebaseapp.com",
-			projectId: "agenda-a9fa6", // CECI EST LA LIGNE CLÉ
-			storageBucket: "agenda-a9fa6.firebasestorage.app",
-			messagingSenderId: "231671341079",
-			appId: "1:231671341079:web:9..."
-		  };
+		    const firebaseConfig = {
+			    apiKey: "AIzaSyAVR-n_rotV-_6hmI5JSEvcsAsmH2-SbDw",
+			    authDomain: "agenda-a9fa6.firebaseapp.com",
+			    projectId: "agenda-a9fa6", // CECI EST LA LIGNE CLÉ
+			    storageBucket: "agenda-a9fa6.firebasestorage.app",
+			    messagingSenderId: "231671341079",
+			    appId: "1:231671341079:web:9..."
+		    };
 
-		  const app = initializeApp(firebaseConfig);
-		  const db = getFirestore(app);
+		    const app = initializeApp(firebaseConfig);
+		    const db = getFirestore(app);
 
-          // Ceci appelle la fonction d'initialisation dans agenda.js
-          if (window.initAgenda) {
-            window.initAgenda(db); 
-          } 
+            // Ceci appelle la fonction d'initialisation dans agenda.js
+            if (window.initAgenda) {
+                window.initAgenda(db); 
+            } 
 		</script>
 	
     </body>
