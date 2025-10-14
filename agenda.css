@@ -1,0 +1,227 @@
+/* ================================================= */
+/* Fichier : agenda.css (Styles avec réinitialisation)*/
+/* ================================================= */
+
+/* --- 0. Réinitialisation du conteneur de l'agenda --- */
+/* Ceci garantit que les propriétés héritées du body (comme display: flex) 
+   ne cassent pas la mise en page interne. */
+#agenda {
+    /* Règle puissante pour réinitialiser toutes les propriétés CSS héritées */
+    all: initial; 
+    
+    /* Réappliquez les propriétés essentielles qui sont perdues avec all: initial */
+    font-family: "Poppins", sans-serif;
+    display: block; /* La section doit être un bloc */
+    box-sizing: border-box; 
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+#agenda h2 {
+    /* Style pour le titre de l'agenda (si all: initial a tout réinitialisé) */
+    text-align: center;
+    margin: 20px 0;
+    color: #111827; 
+}
+
+
+/* --- 1. Contrôles (Boutons) --- */
+.controls {
+  margin: 15px 0;
+  text-align: center;
+}
+
+.controls button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  margin: 5px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.controls button:hover {
+  background: #1e40af;
+}
+
+/* NOUVEAU : Styles pour la disposition des deux rangées de boutons */
+
+/* Style pour aligner les boutons de navigation (gauche/droite) */
+.navigation-controls {
+    display: flex;
+    justify-content: center; /* Centrer le groupe de boutons */
+    gap: 15px; /* Espace entre les deux boutons de navigation */
+    margin-bottom: 30px; /* Plus d'espace entre les groupes */
+}
+
+/* Style pour le groupe d'actions (Ajouter/Modifier/Supprimer) */
+.action-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Espace entre les boutons d'action */
+    flex-wrap: wrap; /* Assurez-vous que l'affichage est beau même sur mobile */
+}
+
+/* ================================================= */
+/* 2. Tableau de l'Agenda (CORRECTION CLÉ ULTIME)    */
+/* ================================================= */
+
+#agenda table {
+  width: 90%;
+  max-width: 1000px; 
+  margin: 20px auto;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* LA CORRECTION FINALE qui force l'affichage en grille :
+ * Utilise la spécificité maximale et !important pour garantir le comportement de TABLEAU.
+ */
+
+/* Force les lignes du thead et du tbody à être des lignes de tableau */
+#agenda table thead tr,
+#agenda table tbody tr {
+    display: table-row !important;
+}
+
+/* Force les en-têtes et les cellules à être des cellules de tableau */
+#agenda table th,
+#agenda table td {
+    display: table-cell !important;
+  
+    /* Vos styles de cellule */
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle; 
+    min-width: 100px;
+    height: 50px;
+}
+
+#agenda table th {
+  background: #2563eb;
+  color: white;
+}
+
+/* Style spécifique pour la colonne HEURE (la première td de chaque ligne) */
+#agenda table td:first-child {
+    background-color: #f0f0f0; 
+    font-weight: 600;
+    cursor: default;
+    width: 80px;
+}
+
+/* Couleurs des événements */
+.cell-ds {
+  background-color: #f8d7da;
+}
+
+.cell-devoir {
+  background-color: #cce5ff;
+}
+
+/* Effet au survol pour les cellules interactives */
+#agenda table td:not(:first-child):hover {
+    box-shadow: inset 0 0 0 2px #2563eb;
+}
+
+
+/* --- 3. Modals --- */
+/* Le modal lui-même (fond gris semi-transparent) */
+#modal, 
+#detail-modal { 
+    display: none; 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background: rgba(0, 0, 0, 0.6); /* Fond semi-transparent */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Le CONTENU du modal (votre formulaire) */
+.modal-content {
+  background: white; 
+  /* CLÉ : Ne laisser du padding qu'à droite, en bas et à gauche */
+  padding: 0 30px 30px 30px; 
+  border-radius: 12px; 
+  width: 90%;
+  max-width: 400px; 
+  text-align: left;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15); 
+  /* CLÉ : Nécessaire pour positionner la croix absolument */
+  position: relative; 
+}
+
+/* Style des LABELS et CHAMPS du formulaire */
+#modal-form label {
+    display: block; 
+    /* Augmenter cette marge pour créer l'espace avant chaque nouveau champ */
+    margin-top: 20px; /* J'augmente à 20px pour un bon espacement visuel */
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #374151;
+    font-size: 0.95rem;
+}
+
+/* Optionnel : Supprimer la marge supérieure du premier élément si vous voulez qu'il soit plus proche du titre */
+#modal-form label:first-of-type {
+    margin-top: 0;
+}
+
+/* Style du Titre dans le Modal - CORRECTION ULTIME DE LA MARGE */
+.modal-content #modal-title { 
+    background-color: #2563eb !important; 
+    color: white !important; 
+
+    /* Supprimer TOUTES les marges du H2 (essentiel) */
+    margin: 0; 
+
+    /* MARGE NÉGATIVE : Compensons les 30px de padding */
+    margin-left: -30px !important;
+    margin-right: -30px !important; 
+    margin-bottom: 20px !important; /* Marge sous le titre pour espacer les champs */
+    
+    /* Padding interne de la barre de titre */
+    padding: 15px 20px;
+
+    /* Forcer la largeur à compenser les 30px de padding gauche et droit */
+    width: calc(100% + 60px); 
+    
+    /* Le reste du style */
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+    
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+/* Bouton pour fermer le modal (le "X") - Positionnement garanti */
+.close {
+    position: absolute;
+    
+    /* Place la croix à 10px du bord supérieur (maintenant à 0) */
+    top: 10px; 
+    right: 15px; 
+    
+    /* Style de la croix */
+    color: white !important; /* Doit être blanc sur le fond bleu */
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1; 
+    z-index: 10; 
+}
+
+.close:hover {
+    color: #e0e0e0 !important; 
+}

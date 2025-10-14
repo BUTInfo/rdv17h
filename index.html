@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Ressources pédagogiques</title>
+        <link rel="icon" href="logo/icon.png">
+        <link rel="stylesheet" href="index.css" />
+		<link rel="stylesheet" href="agenda.css">
+    </head>
+    <body>
+        <header>
+            <div class="brand">
+                <a href="index.html"><img src="logo/icon.png" class="logo"></a>
+                <div>
+                    <h1 style="font-size:1.2rem;margin:0">Ressources pédagogiques</h1>
+                    <p class="muted" style="margin:0;font-size:.9rem">Navigation rapide vers les sections</p>
+                </div>
+            </div>
+            <nav aria-label="Navigation principale">
+                        <ul>
+                            <li><a href="initiation_dev/indexID.html">Initiation dev</a></li>
+                            <li><a href="intro_sys/indexIS.html">Intro système</a></li>
+                            <li><a href="communication/indexCOM.html">Communication</a></li>
+                            <li><a href="economie/indexECO.html">Économie</a></li>
+                            <li><a href="maths/indexMAT.html">Maths</a></li>
+                            <li><a href="archi/indexARC.html">Archi</a></li>
+                            <li><a href="anglais/indexANG.html">Anglais</a></li>
+                            <li><a href="web/indexWEB.html">Web</a></li>
+                            <li><a href="sql/indexSQL.html">SQL</a></li>
+                            <li><a href="conception_db/indexCON.html">Conception DB</a></li>
+                            <li><a href="sae/indexSAE.html">SAE</a></li>
+							<li><a href="#agenda">Agenda</a></li>
+                        </ul>
+                    </nav>
+        </header>
+
+        <main>
+            <section class="hero">
+					<h1>Bienvenue dans la navigation</h1>
+					<p>Découvrez les dates de contrôles, les cours, TD et TP corrigés et les devoirs à faire ! </p>
+					<a href="#intro-dev" class="cta">Commencer</a>
+				</section>
+
+            <section id="categories" class="categories">
+                <h2>Catégories de cours</h2>
+                <p class="muted">Choisis une catégorie pour accéder aux cours correspondants</p>
+
+                <div class="grid-3">
+                    <article id="intro-dev"  class="card cat">
+                        <h3>Initiation dev</h3>
+                        <p>Bases du développement : workflows, outils, bonnes pratiques, 
+						et ressources pour débuter en programmation.</p>
+                        <a href="initiation_dev/indexID.html" class="cta">Accéder</a>
+                    </article>
+
+                    <article id="intro-sys" class="card cat">
+                        <h3>Intro Sys</h3>
+                        <p>Systèmes d'exploitation, architecture basique, 
+						gestion de processus et notions d'admin système.</p>
+                        <a href="intro_sys/indexIS.html" class="cta">Accéder</a>
+                    </article>
+
+                    <article id="communication" class="card cat">
+                        <h3>Communication</h3>
+                        <p>Techniques de communication écrite et orale, présentation, écoute active et travail en équipe.</p>
+                        <a href="communication/indexCOM.html" class="cta">Accéder</a>
+                    </article>
+
+                    <article class="card cat">
+                        <h3>Economie</h3>
+                        <p>Principes économiques de base, 
+						micro/macro, modèles et terminologie utile pour 
+						l'informatique et l'entrepreneuriat.</p>
+                        <a href="economie/indexECO.html" class="cta">Accéder</a>
+                    </article>
+
+                    <article class="card cat">
+                        <h3>Maths</h3>
+                        <p>Algèbre, logique, probabilités et notions utiles en algorithmique et science des données.</p>
+                        <a href="maths/indexMAT.html" class="cta">Accéder</a>
+                    </article>
+
+                    <article class="card cat">
+                        <h3>Archi</h3>
+                        <p>Architecture logicielle : patterns, microservices, choix d'infrastructure et scalabilité.</p>
+                        <a href="archi/indexARC.html" class="cta">Accéder</a>
+                    </article>
+
+                    <article class="card cat">
+                        <h3>Anglais</h3>
+                        <p>Vocabulaire technique, compréhension écrite et conseils 
+						pour lire la documentation en anglais.</p>
+                        <a href="anglais/indexANG.html" class="cta">Accéder</a>
+                    </article>
+
+                    <article class="card cat">
+                        <h3>Web</h3>
+                        <p>HTML, CSS, JavaScript, bonnes pratiques front-end et introduction au développement full-stack.</p>
+                        <a href="web/indexWEB.html" class="cta">Accéder</a>
+                    </article>
+
+                    <article class="card cat">
+                        <h3>SQL</h3>
+                        <p>Requêtes fondamentales, optimisation, indexation et manipulations de données relationnelles.</p>
+                        <a href="sql/indexSQL.html" class="cta">Accéder</a>
+                    </article>
+
+                    <article class="card cat">
+                        <h3>Conception DB</h3>
+                        <p>Modélisation conceptuelle (MCD/ER), normalisation, et design de schémas pour applications réelles.</p>
+                        <a href="conception_db/indexCON.html" class="cta">Accéder</a>
+                    </article>
+                </div>
+            </section>
+
+            <section id="agenda" class="categories">
+				<h2>Agenda</h2>
+
+				<div class="controls navigation-controls">
+					<button id="prev-week">← Semaine précédente</button>
+					<button id="next-week">Semaine suivante →</button>
+				</div>
+
+				<div class="controls action-controls">
+					<button id="btn-add">➕ Ajouter un devoir/DS</button>
+					<button id="btn-edit">✏️ Modifier un devoir/DS</button>
+					<button id="btn-delete">🗑️ Supprimer un devoir/DS</button>
+				</div>
+
+				<table>
+					<thead>
+						<tr>
+							<th>Heure</th>
+							<th>Lundi</th>
+							<th>Mardi</th>
+							<th>Mercredi</th>
+							<th>Jeudi</th>
+							<th>Vendredi</th>
+							<th>Samedi</th>
+							<th>Dimanche</th>
+						</tr>
+					</thead>
+					<tbody id="table-body">
+                        <tr>
+                            <td>8h00</td>
+                            <td data-day-index="0" data-hour="8h00"></td>
+                            <td data-day-index="1" data-hour="8h00"></td>
+                            <td data-day-index="2" data-hour="8h00"></td>
+                            <td data-day-index="3" data-hour="8h00"></td>
+                            <td data-day-index="4" data-hour="8h00"></td>
+							<td data-day-index="5" data-hour="8h00"></td>
+							<td data-day-index="6" data-hour="8h00"></td>
+                        </tr>
+                        <tr>
+                            <td>10h10</td>
+                            <td data-day-index="0" data-hour="10h10"></td>
+                            <td data-day-index="1" data-hour="10h10"></td>
+                            <td data-day-index="2" data-hour="10h10"></td>
+                            <td data-day-index="3" data-hour="10h10"></td>
+                            <td data-day-index="4" data-hour="10h10"></td>
+							<td data-day-index="5" data-hour="10h10"></td>
+							<td data-day-index="6" data-hour="10h10"></td>
+                        </tr>
+                        <tr>
+                            <td>13h30/14h00</td>
+                            <td data-day-index="0" data-hour="13h30/14h00"></td>
+                            <td data-day-index="1" data-hour="13h30/14h00"></td>
+                            <td data-day-index="2" data-hour="13h30/14h00"></td>
+                            <td data-day-index="3" data-hour="13h30/14h00"></td>
+                            <td data-day-index="4" data-hour="13h30/14h00"></td>
+							<td data-day-index="5" data-hour="13h30/14h00"></td>
+							<td data-day-index="6" data-hour="13h30/14h00"></td>
+							
+                        </tr>
+                        <tr>
+                            <td>15h40/16h10</td>
+                            <td data-day-index="0" data-hour="15h40/16h10"></td>
+                            <td data-day-index="1" data-hour="15h40/16h10"></td>
+                            <td data-day-index="2" data-hour="15h40/16h10"></td>
+                            <td data-day-index="3" data-hour="15h40/16h10"></td>
+                            <td data-day-index="4" data-hour="15h40/16h10"></td>
+							<td data-day-index="5" data-hour="15h40/16h10"></td>
+							<td data-day-index="6" data-hour="15h40/16h10"></td>
+							
+                        </tr>
+					</tbody>
+				</table>
+
+				<div id="modal" class="modal">
+					<div class="modal-content">
+				
+						<span id="close-modal" class="close">&times;</span> 
+
+						<h2 id="modal-title"></h2>
+							<form id="modal-form">
+							<label for="modal-date">Date :</label>
+							<input type="date" id="modal-date" required><br> 
+							
+							<label for="modal-hour">Heure :</label>
+							<select id="modal-hour"></select><br>
+							
+							<label for="modal-title-input">Titre :</label>
+							<input type="text" id="modal-title-input" required><br> <label for="modal-type">Type :</label>
+							<select id="modal-type">
+								<option value="devoir">Devoir</option>
+								<option value="ds">DS</option>
+							</select><br>
+							
+							<label for="modal-detail">Détail :</label>
+							<textarea id="modal-detail"></textarea><br>
+							
+							<button type="submit" id="modal-submit-button">Valider</button>
+							<button type="button" id="modal-cancel-button">Annuler</button> </form>
+					</div>
+				</div>
+
+				<div id="detail-modal" class="modal"> <div class="modal-content">
+					<span id="close-detail" class="close">&times;</span> <h3 id="detail-title"></h3>
+					<p id="detail-content"></p>
+                    <button id="btn-detail-edit" type="button">Modifier</button>
+                    <button id="btn-detail-delete" type="button">Supprimer</button>
+				</div>
+				</div>
+			</section>
+
+        <footer id="contact">
+            <div>
+                <strong>Ressources Pédagogiques</strong>
+                <div class="small">© <span id="year">2025</span> — Tous droits réservés</div>
+            </div>
+            <div class="links small">
+                <span>Contact : <a href="https://www.instagram.com/thomas_mhst/" style="color:inherit;text-decoration:underline"><img src="logo/instagram.png"></a></span>
+                <span>·</span>
+                <a href="contributions.html" style="color:inherit;text-decoration:underline">Contributeurs</a>
+                <span>·</span>
+                <a href="#categories" style="color:inherit;text-decoration:underline">Retour aux cours</a>
+            </div>
+        </footer>
+
+        <script src="script.js"></script>
+		<script src="agenda.js"></script>
+		<script type="module">
+		  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+		  import { getFirestore, getDocs, collection, setDoc, doc, deleteDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+          
+          // RENDRE LES FONCTIONS ACCESSIBLES GLOBALEMENT (pour agenda.js)
+          window.getDocs = getDocs;
+          window.collection = collection;
+          window.setDoc = setDoc;
+          window.doc = doc;
+          window.deleteDoc = deleteDoc;
+
+		  const firebaseConfig = {
+			apiKey: "AIzaSyAVR-n_rotV-_6hmI5JSEvcsAsmH2-SbDw",
+			authDomain: "agenda-a9fa6.firebaseapp.com",
+			projectId: "agenda-a9fa6", // CECI EST LA LIGNE CLÉ
+			storageBucket: "agenda-a9fa6.firebasestorage.app",
+			messagingSenderId: "231671341079",
+			appId: "1:231671341079:web:9..."
+		  };
+
+		  const app = initializeApp(firebaseConfig);
+		  const db = getFirestore(app);
+
+          // Ceci appelle la fonction d'initialisation dans agenda.js
+          if (window.initAgenda) {
+            window.initAgenda(db); 
+          } 
+		</script>
+	
+    </body>
+</html>
