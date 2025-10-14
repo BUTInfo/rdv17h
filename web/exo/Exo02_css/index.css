@@ -1,0 +1,15 @@
+body section p {
+    background-color: yellow
+}
+body > section > p {
+    color: red
+}
+h3 + p {
+    font-variant: small-caps
+}
+h3 ~ p {
+    text-decoration: underline
+}
+h3, p {
+    text-align: center
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>SQL</title>
+    <link rel="icon" href="../logo/icon.png" />
+    <link rel="stylesheet" href="../index.css" />
+  </head>
+  <body>
+    <header>
+      <div class="brand">
+        <a href="../index.html"><div class="logo">SQL</div></a>
+        <div>
+          <h1 style="font-size: 1.2rem; margin: 0">Communication</h1>
+          <p class="muted" style="margin: 0; font-size: 0.9rem"></p>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Accueil</a></li>
+          <li><a href="#categories">Cours</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <h1>Bienvenue dans le module <span class="accent">SQL</span></h1>
+        <p>Découvre ...</p>
+        <a href="#categories" class="cta">Commencer</a>
+      </section>
+
+      <section id="categories" class="categories">
+        <h2>Catégories de cours</h2>
+        <p class="muted">
+          Choisis une catégorie pour accéder aux cours correspondants :
+        </p>
+
+        <div class="grid-3">
+          <article class="card cat">
+            <h3>Cours 1</h3>
+            <p>Introduction - Modèle relationnel</p>
+            <a href="https://moodle.univ-lyon1.fr/pluginfile.php/2839398/mod_resource/content/1/1.%20Introduction.pdf" class="cta">Accéder</a>
+          </article>
+		  
+		  <article class="card cat">
+            <h3>Cours 2</h3>
+            <p>Langage SQL - Ordre SELECT - Projection Sélection</p>
+            <a href="https://moodle.univ-lyon1.fr/pluginfile.php/2843736/mod_resource/content/1/2.1%20Langage%20SQL%20-%20Ordre%20SELECT-%20Projection%20S%C3%A9lection.pdf" class="cta">Accéder</a>
+          </article>
+        </div> 
+      </section>
+
+      <section id="categories" class="categories">
+        <h2>Catégories de TD</h2>
+        <p class="muted">
+          Choisis une catégorie pour accéder aux TDs correspondants :
+        </p>
+
+        <div class="grid-3">
+          <article class="card cat">
+            <h3>Correction TD1</h3>
+            <p>Série 1 - Modèle relationnel</p>
+            <a href="https://moodle.univ-lyon1.fr/pluginfile.php/2839403/mod_folder/content/0/S%C3%A9rie1-Mod%C3%A8le%20relationnel.pdf" class="cta">Sujet</a>
+			      <p></p>
+			      <a href="https://moodle.univ-lyon1.fr/pluginfile.php/2839403/mod_folder/content/0/Correction%20s%C3%A9rie1.pdf" class="cta">Correction</a>
+          </article>
+		  
+          <article class="card cat">
+            <h3>Correction TD2</h3>
+            <p>Série 2 - Sélection Projection</p>
+            <a href="https://moodle.univ-lyon1.fr/pluginfile.php/2839405/mod_folder/content/0/S%C3%A9rie%202.pdf" class="cta">Sujet</a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contact">
+      <div>
+        <strong>SQL</strong>
+        <div class="small">
+          © <span id="year">2025</span> — Tous droits réservés
+        </div>
+      </div>
+      <div class="links small">
+        <span
+          >Contact :
+          <a
+            href="https://www.instagram.com/thomas_mhst/"
+            style="color: inherit; text-decoration: underline"
+            ><img src="../logo/instagram.png" /></a
+        ></span>
+        <span>·</span>
+        <a
+          href="../contributions.html"
+          style="color: inherit; text-decoration: underline"
+          >Contributeurs</a
+        >
+        <span>·</span>
+        <a href="#categories" style="color: inherit; text-decoration: underline"
+          >Retour aux cours</a
+        >
+      </div>
+    </footer>
+
+    <script src="../script.js">
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
