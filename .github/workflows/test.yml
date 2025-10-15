@@ -1,25 +1,28 @@
-name: Update ICS
+name: Auto Commit
 
 on:
-  schedule:
-    - cron: '0 5 * * *'  # Tous les jours à 6h heure France (UTC+1/UTC+2)
-  workflow_dispatch:     # Permet aussi de lancer manuellement
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
 
 jobs:
-  update-ics:
+  update:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Télécharger le ICS
-        run: |
-          curl -L "https://edt.univ-lyon1.fr/jsp/custom/modules/plannings/anonymous_cal.jsp?resources=31184,12444,12424&projectId=1&calType=ical&firstDate=2025-08-18&lastDate=2026-08-01" -o edt.ics
-
-      - name: Commit et push
+      - name: Make changes
         run: |
           git config user.name "BUTInfo"
-          git config user.email "t.meheust2007@gmail.com"
-          git add edt.ics
-          git commit -m "Mise à jour automatique du fichier ICS" || echo "Pas de modification"
-          git push
+          git config user.email "butinfo@example.com"
+          # your code that modifies files
+          git add .
+          git commit -m "Mise à jour automatique du fichier ICS" || echo "No changes"
+
+      - name: Push changes
+        run: git push
