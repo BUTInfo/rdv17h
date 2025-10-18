@@ -21,7 +21,7 @@
     /* Style pour le titre de l'agenda (si all: initial a tout réinitialisé) */
     text-align: center;
     margin: 20px 0;
-    color: #374151; /* Gris foncé (muted) */
+    color: #111827; 
 }
 
 
@@ -32,8 +32,7 @@
 }
 
 .controls button {
-  /* MODIFIÉ : Utilise le nouveau rose */
-  background: #F781BE; 
+  background: #2563eb;
   color: white;
   border: none;
   padding: 8px 12px;
@@ -44,8 +43,7 @@
 }
 
 .controls button:hover {
-  /* MODIFIÉ : Utilise le nouveau rose foncé */
-  background: #D9609A;
+  background: #1e40af;
 }
 
 /* NOUVEAU : Styles pour la disposition des deux rangées de boutons */
@@ -97,7 +95,7 @@
     display: table-cell !important;
   
     /* Vos styles de cellule */
-    border: 1px solid #FCE7F6; /* Bordure en gris très clair/rosé */
+    border: 1px solid #ddd;
     padding: 10px;
     text-align: center;
     vertical-align: middle; 
@@ -106,32 +104,30 @@
 }
 
 #agenda table th {
-  /* MODIFIÉ : Utilise le nouveau rose */
-  background: #F781BE; 
+  background: #2563eb;
   color: white;
 }
 
 /* Style spécifique pour la colonne HEURE (la première td de chaque ligne) */
 #agenda table td:first-child {
-    background-color: #FFB6C1; /* Rose Clair pour la colonne heure */
+    background-color: #f0f0f0; 
     font-weight: 600;
     cursor: default;
     width: 80px;
 }
 
-/* Couleurs des événements (Adaptation des couleurs pour rester dans la palette rose) */
+/* Couleurs des événements */
 .cell-ds {
-  background-color: #F8BBD0; /* Rose plus doux */
+  background-color: #f8d7da;
 }
 
 .cell-devoir {
-  background-color: #F48FB1; /* Rose moyen */
+  background-color: #cce5ff;
 }
 
 /* Effet au survol pour les cellules interactives */
 #agenda table td:not(:first-child):hover {
-    /* MODIFIÉ : Utilise le nouveau rose */
-    box-shadow: inset 0 0 0 2px #F781BE;
+    box-shadow: inset 0 0 0 2px #2563eb;
 }
 
 
@@ -172,7 +168,7 @@
     margin-top: 20px; /* J'augmente à 20px pour un bon espacement visuel */
     margin-bottom: 5px;
     font-weight: 600;
-    color: #374151; /* Gris foncé */
+    color: #374151;
     font-size: 0.95rem;
 }
 
@@ -183,8 +179,7 @@
 
 /* Style du Titre dans le Modal - CORRECTION ULTIME DE LA MARGE */
 .modal-content #modal-title { 
-    /* MODIFIÉ : Utilise le nouveau rose */
-    background-color: #F781BE !important; 
+    background-color: #2563eb !important; 
     color: white !important; 
 
     /* Supprimer TOUTES les marges du H2 (essentiel) */
@@ -219,7 +214,7 @@
     right: 15px; 
     
     /* Style de la croix */
-    color: white !important; /* Doit être blanc sur le fond rose */
+    color: white !important; /* Doit être blanc sur le fond bleu */
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
@@ -228,5 +223,5 @@
 }
 
 .close:hover {
-    color: #F8F8FF !important; /* Rose très clair au survol */
+    color: #e0e0e0 !important; 
 }

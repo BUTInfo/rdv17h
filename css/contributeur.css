@@ -1,0 +1,83 @@
+.contrib-main {
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 3rem 2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+/* --- Profil --- */
+.profile {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+	background: var(--card);
+	padding: 2rem;
+	border-radius: var(--radius);
+	box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
+}
+
+.profile-img {
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	object-fit: cover;
+	border: 3px solid rgba(37, 99, 235, 0.15);
+}
+
+.profile-info h2 {
+	color: var(--accent);
+	margin-bottom: 0.3rem;
+}
+
+.role {
+	font-weight: 600;
+	color: var(--muted);
+	margin-bottom: 0.5rem;
+}
+
+.bio {
+	color: var(--muted);
+	line-height: 1.6;
+}
+
+/* --- Liste des contributions --- */
+.contrib-list {
+	background: var(--card);
+	padding: 2rem;
+	border-radius: var(--radius);
+	box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
+}
+
+.contrib-list h3 {
+	margin-bottom: 1rem;
+	color: var(--accent);
+}
+
+.contrib-list ul {
+	list-style: none;
+	padding: 0;
+}
+
+.contrib-list li {
+	padding: 0.6rem 0;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.contrib-list li:last-child {
+	border-bottom: none;
+}
+
+/* --- Boutons --- */
+.btn-group {
+	display: flex;
+	gap: 1rem;
+	justify-content: center;
+	margin-top: 1rem;
+}
+
+.btn-group .cta {
+	flex: 1;
+	text-align: center;
+}

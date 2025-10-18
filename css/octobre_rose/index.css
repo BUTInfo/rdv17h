@@ -1,17 +1,18 @@
-/* === 🎃 Thème Halloween complet === */
 :root {
-  --bg: #0d0d0d;
-  --card: #1a1a1a;
-  --muted: #d4a373;
-  --accent: #ff7518; /* orange citrouille */
-  --accent-2: #a020f0; /* violet sorcier */
+  --bg: #FCE7F6; /* Fond très clair, légèrement rosé (similaire à Pale Pink) */
+  --card: #ffffff; /* Fond des cartes/éléments */
+  --muted: #374151; /* Texte secondaire, gris foncé */
+  /* MODIFIÉ : Un rose plus "Octobre Rose" */
+  --accent: #F781BE;
+  --accent-2: #FFB6C1; /* Rose Pâle (Light Pink) - Couleur d'accent secondaire */
+  /* AJOUTÉ : Une nuance plus foncée pour les survols */
+  --accent-dark: #D9609A;
   --radius: 12px;
   --gap: 1rem;
   font-size: 16px;
-  color-scheme: dark;
+  color-scheme: light;
 }
 
-/* --- Reset général --- */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -25,9 +26,10 @@ body {
 }
 
 body {
-  font-family: "Creepster", "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
-  color: #f5f3e7;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+  background: var(--bg);
+  color: #111827;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.45;
@@ -38,15 +40,18 @@ body {
 
 /* --- Header --- */
 header {
-  background: rgba(20, 20, 20, 0.85);
-  backdrop-filter: blur(8px);
+  /* Le dégradé du header passe du rose très clair au blanc */
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.95), /* Plus blanc pour contraster avec --bg */
+      rgba(255, 255, 255, 0.8));
+  backdrop-filter: blur(6px);
+  border-radius: 0;
   padding: 1rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: var(--gap);
-  border-bottom: 2px solid var(--accent);
-  box-shadow: 0 0 15px rgba(255, 117, 24, 0.25);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
 }
 
 .brand {
@@ -59,18 +64,18 @@ header {
   width: 44px;
   height: 44px;
   border-radius: 10px;
+  /* Dégradé de rose pour le logo */
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
   display: flex;
   align-items: center;
   justify-content: center;
-  color: black;
-  font-weight: 900;
+  color: white;
+  font-weight: 700;
   font-size: 1.05rem;
-  text-shadow: 0 0 6px #000;
-  box-shadow: 0 0 12px rgba(255, 117, 24, 0.8);
+  /* Ombre ajustée en rose */
+  box-shadow: 0 6px 12px rgba(255, 105, 180, 0.14); 
 }
 
-/* --- Navigation --- */
 nav ul {
   list-style: none;
   display: flex;
@@ -83,7 +88,6 @@ nav li {
   border-radius: 10px;
   overflow: hidden;
 }
-
 nav a {
   display: inline-block;
   padding: 0.5rem 0.75rem;
@@ -92,44 +96,43 @@ nav a {
   color: var(--muted);
   font-weight: 600;
   font-size: 0.95rem;
-  transition: 0.3s;
 }
 
 nav a:hover {
-  background: rgba(255, 117, 24, 0.15);
+  /* Fond légèrement rosé au survol */
+  background: rgba(255, 105, 180, 0.06);
   color: var(--accent);
-  text-shadow: 0 0 6px var(--accent);
 }
 
+
+
+/* nav a:focus, */
 nav a:active {
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(116, 116, 116, 0.436);
   border-radius: 10px;
 }
 
-/* --- Section Hero --- */
+/* --- Hero section --- */
 .hero {
   text-align: center;
   padding: 6rem 1.5rem;
-  background: linear-gradient(135deg, #ff7518 0%, #4b0082 100%);
+  /* Dégradé du Hero : Rose Vif vers Rose Pâle */
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
   color: white;
   border-radius: 0 0 1.5rem 1.5rem;
-  box-shadow: 0 0 30px rgba(255, 117, 24, 0.3);
-  position: relative;
-  overflow: hidden;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  opacity: 0.05;
-  mix-blend-mode: overlay;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
 }
 
 .hero h1 {
-  font-size: 2.5rem;
+  font-size: 2.25rem;
   margin-bottom: 0.75rem;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+}
+
+/* AJOUTÉ : Ajoute un ruban symbolique au titre "hero" */
+.hero h1::after {
+  content: " 🎗️";
+  font-size: 2rem;
+  vertical-align: middle;
 }
 
 .hero p {
@@ -139,20 +142,18 @@ nav a:active {
 }
 
 .hero .cta {
-  background: #000;
+  background: white;
   color: var(--accent);
   padding: 0.75rem 1.25rem;
   border-radius: 8px;
   font-weight: 700;
   text-decoration: none;
-  box-shadow: 0 0 15px rgba(255, 117, 24, 0.4);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.25);
   transition: 0.3s;
 }
 
 .hero .cta:hover {
-  background: var(--accent);
-  color: #000;
-  box-shadow: 0 0 25px rgba(255, 117, 24, 0.8);
+  background: rgba(255, 255, 255, 0.9);
 }
 
 /* --- Catégories --- */
@@ -165,8 +166,6 @@ nav a:active {
 .categories h2 {
   text-align: center;
   margin-bottom: 0.5rem;
-  color: var(--accent);
-  text-shadow: 0 0 6px var(--accent-2);
 }
 
 .categories p {
@@ -175,6 +174,7 @@ nav a:active {
   color: var(--muted);
 }
 
+/*! pour les page sans contenue */
 .content404 p {
   color: red;
   font-weight: bolder;
@@ -191,23 +191,18 @@ nav a:active {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: var(--card);
   text-align: center;
   padding: 2rem 1rem;
-  border-radius: var(--radius);
-  border: 1px solid rgba(255, 117, 24, 0.2);
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
   transition: 0.3s;
 }
 
 .cat:hover {
-  transform: translateY(-6px) scale(1.03);
-  box-shadow: 0 0 25px rgba(255, 117, 24, 0.4);
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
 .cat h3 {
   margin-bottom: 0.5rem;
-  color: var(--accent);
 }
 
 .cat p {
@@ -219,42 +214,41 @@ nav a:active {
   padding: 0.6rem 1rem;
   border-radius: 8px;
   background: var(--accent);
-  color: #000;
+  color: white;
   text-decoration: none;
   font-weight: 700;
-  box-shadow: 0 0 15px rgba(255, 117, 24, 0.5);
+  /* Ombre ajustée en rose */
+  box-shadow: 0 6px 14px rgba(255, 105, 180, 0.12);
   transition: 0.3s;
 }
 
 .cta:hover {
   background: var(--accent-2);
-  color: #fff;
-  box-shadow: 0 0 25px rgba(160, 32, 240, 0.6);
 }
 
 /* --- Footer --- */
 footer {
   padding: 1.5rem 2rem;
-  background: #000;
-  color: #f5f3e7;
+  /* MODIFIÉ : Utilise la nouvelle variable de couleur foncée */
+  background: var(--accent-dark); 
+  color: #fce7f6; /* Texte très clair sur fond foncé */
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
   flex-wrap: wrap;
-  border-top: 2px solid var(--accent);
-  box-shadow: 0 -4px 20px rgba(255, 117, 24, 0.2);
+  
   width: 100%;
 }
 
 main {
-  flex-grow: 1;
-  display: block;
+  flex-grow: 1; /* Permet à l'élément <main> de s'étirer et de prendre tout l'espace libre */
+  display: block; /* S'assurer qu'il est bien un bloc */
 }
 
 .small {
   font-size: 0.88rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(230, 238, 248, 0.9);
 }
 
 .links {
@@ -274,6 +268,7 @@ a {
 
 img {
   width: 16px;
+  /* taille fixe pour toutes les images */
   height: 16px;
 }
 
@@ -288,7 +283,7 @@ img {
   }
 
   .hero h1 {
-    font-size: 1.9rem;
+    font-size: 1.75rem;
   }
 }
 
@@ -320,13 +315,4 @@ img {
     box-shadow: none !important;
     transform: none !important;
   }
-}
-
-@font-face {
-  font-family: 'Creepster';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/creepster/v13/AlZy_zVUqJz4yMrniH4Rcn35.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }

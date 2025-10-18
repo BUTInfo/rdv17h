@@ -19,16 +19,16 @@ main {
 	background: var(--card);
 	padding: 1.5rem;
 	border-radius: var(--radius);
-	/* Ombre légèrement rosée */
-	box-shadow: 0 6px 14px rgba(255, 105, 180, 0.1);
+	/* MODIFIÉ : Ombre légèrement orange */
+	box-shadow: 0 6px 14px rgba(255, 102, 0, 0.1);
 	text-align: center;
 	transition: 0.3s;
 }
 
 .contrib-card:hover {
 	transform: translateY(-5px);
-	/* Ombre au survol plus prononcée et rosée */
-	box-shadow: 0 10px 24px rgba(255, 105, 180, 0.15);
+	/* MODIFIÉ : Ombre au survol plus prononcée et orange */
+	box-shadow: 0 10px 24px rgba(255, 102, 0, 0.15);
 }
 
 .contrib-card img {
@@ -41,7 +41,7 @@ main {
 
 .contrib-card h3 {
 	margin-bottom: 0.25rem;
-	/* Titre en couleur accent (rose vif) */
+	/* Titre en couleur accent (devient orange grâce à :root) */
 	color: var(--accent);
 }
 

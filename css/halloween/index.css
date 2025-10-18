@@ -1,16 +1,19 @@
 :root {
-  --bg: #FCE7F6; /* Fond très clair, légèrement rosé (similaire à Pale Pink) */
-  --card: #ffffff; /* Fond des cartes/éléments */
-  --muted: #374151; /* Texte secondaire, gris foncé */
-  /* MODIFIÉ : Un rose plus "Octobre Rose" */
-  --accent: #F781BE;
-  --accent-2: #FFB6C1; /* Rose Pâle (Light Pink) - Couleur d'accent secondaire */
-  /* AJOUTÉ : Une nuance plus foncée pour les survols */
-  --accent-dark: #D9609A;
+  /* MODIFIÉ : Palette Halloween (Dark Mode) */
+  --bg: #1a1a1a; /* Fond très sombre */
+  --card: #2a2a2a; /* Fond des cartes, gris foncé */
+  --muted: #AAAAAA; /* Texte secondaire, gris clair */
+  --accent: #FF6600; /* Orange vif */
+  --accent-2: #FFA500; /* Orange plus clair */
+  --accent-dark: #CC5200; /* Orange foncé (survol) */
+  /* AJOUTÉ : Couleur secondaire Halloween */
+  --accent-purple: #330033; /* Violet très foncé */
+  
   --radius: 12px;
   --gap: 1rem;
   font-size: 16px;
-  color-scheme: light;
+  /* MODIFIÉ : Passage en mode sombre */
+  color-scheme: dark;
 }
 
 * {
@@ -28,8 +31,9 @@ body {
 body {
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Arial;
+  /* MODIFIÉ : Couleurs du body */
   background: var(--bg);
-  color: #111827;
+  color: #EAEAEA; /* Texte principal clair */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.45;
@@ -40,10 +44,10 @@ body {
 
 /* --- Header --- */
 header {
-  /* Le dégradé du header passe du rose très clair au blanc */
+  /* MODIFIÉ : Fond sombre pour le header */
   background: linear-gradient(180deg,
-      rgba(255, 255, 255, 0.95), /* Plus blanc pour contraster avec --bg */
-      rgba(255, 255, 255, 0.8));
+      rgba(26, 26, 26, 0.95),
+      rgba(26, 26, 26, 0.8));
   backdrop-filter: blur(6px);
   border-radius: 0;
   padding: 1rem 2rem;
@@ -51,7 +55,8 @@ header {
   align-items: center;
   justify-content: space-between;
   gap: var(--gap);
-  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+  /* MODIFIÉ : Ombre pour le mode sombre */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
 }
 
 .brand {
@@ -64,7 +69,7 @@ header {
   width: 44px;
   height: 44px;
   border-radius: 10px;
-  /* Dégradé de rose pour le logo */
+  /* MODIFIÉ : Dégradé orange pour le logo */
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
   display: flex;
   align-items: center;
@@ -72,8 +77,8 @@ header {
   color: white;
   font-weight: 700;
   font-size: 1.05rem;
-  /* Ombre ajustée en rose */
-  box-shadow: 0 6px 12px rgba(255, 105, 180, 0.14); 
+  /* MODIFIÉ : Ombre ajustée en orange */
+  box-shadow: 0 6px 12px rgba(255, 102, 0, 0.14); 
 }
 
 nav ul {
@@ -99,8 +104,8 @@ nav a {
 }
 
 nav a:hover {
-  /* Fond légèrement rosé au survol */
-  background: rgba(255, 105, 180, 0.06);
+  /* MODIFIÉ : Fond orange au survol */
+  background: rgba(255, 102, 0, 0.1);
   color: var(--accent);
 }
 
@@ -116,11 +121,12 @@ nav a:active {
 .hero {
   text-align: center;
   padding: 6rem 1.5rem;
-  /* Dégradé du Hero : Rose Vif vers Rose Pâle */
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+  /* MODIFIÉ : Dégradé Halloween (Orange vers Violet) */
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-purple) 100%);
   color: white;
   border-radius: 0 0 1.5rem 1.5rem;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  /* MODIFIÉ : Ombre pour mode sombre */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
 }
 
 .hero h1 {
@@ -128,9 +134,9 @@ nav a:active {
   margin-bottom: 0.75rem;
 }
 
-/* AJOUTÉ : Ajoute un ruban symbolique au titre "hero" */
+/* MODIFIÉ : Ajoute une citrouille symbolique */
 .hero h1::after {
-  content: " 🎗️";
+  content: " 🎃";
   font-size: 2rem;
   vertical-align: middle;
 }
@@ -142,8 +148,9 @@ nav a:active {
 }
 
 .hero .cta {
+  /* MODIFIÉ : Bouton blanc qui ressort sur le dégradé */
   background: white;
-  color: var(--accent);
+  color: var(--accent); 
   padding: 0.75rem 1.25rem;
   border-radius: 8px;
   font-weight: 700;
@@ -194,11 +201,15 @@ nav a:active {
   text-align: center;
   padding: 2rem 1rem;
   transition: 0.3s;
+  /* AJOUTÉ : Fond de carte pour le mode sombre */
+  background: var(--card);
+  border-radius: var(--radius);
 }
 
 .cat:hover {
   transform: translateY(-6px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  /* MODIFIÉ : Ombre orange */
+  box-shadow: 0 10px 25px rgba(255, 102, 0, 0.1);
 }
 
 .cat h3 {
@@ -217,21 +228,22 @@ nav a:active {
   color: white;
   text-decoration: none;
   font-weight: 700;
-  /* Ombre ajustée en rose */
-  box-shadow: 0 6px 14px rgba(255, 105, 180, 0.12);
+  /* MODIFIÉ : Ombre ajustée en orange */
+  box-shadow: 0 6px 14px rgba(255, 102, 0, 0.12);
   transition: 0.3s;
 }
 
 .cta:hover {
-  background: var(--accent-2);
+  /* MODIFIÉ : Utilise l'orange foncé */
+  background: var(--accent-dark);
 }
 
 /* --- Footer --- */
 footer {
   padding: 1.5rem 2rem;
-  /* MODIFIÉ : Utilise la nouvelle variable de couleur foncée */
-  background: var(--accent-dark); 
-  color: #fce7f6; /* Texte très clair sur fond foncé */
+  /* MODIFIÉ : Fond violet foncé */
+  background: var(--accent-purple); 
+  color: #EAEAEA; /* Texte clair */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -248,7 +260,7 @@ main {
 
 .small {
   font-size: 0.88rem;
-  color: rgba(230, 238, 248, 0.9);
+  color: rgba(234, 234, 234, 0.9);
 }
 
 .links {

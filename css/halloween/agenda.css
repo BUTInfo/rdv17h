@@ -1,0 +1,214 @@
+/* ================================================= */
+/* Fichier : agenda.css (Styles avec réinitialisation)*/
+/* ================================================= */
+
+/* --- 0. Réinitialisation du conteneur de l'agenda --- */
+#agenda {
+    all: initial; 
+    
+    font-family: "Poppins", sans-serif;
+    display: block; 
+    box-sizing: border-box; 
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+#agenda h2 {
+    text-align: center;
+    margin: 20px 0;
+    /* MODIFIÉ : Texte clair pour mode sombre */
+    color: #EAEAEA; 
+}
+
+
+/* --- 1. Contrôles (Boutons) --- */
+.controls {
+  margin: 15px 0;
+  text-align: center;
+}
+
+.controls button {
+  /* MODIFIÉ : Orange */
+  background: #FF6600; 
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  margin: 5px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.controls button:hover {
+  /* MODIFIÉ : Orange foncé */
+  background: #CC5200;
+}
+
+/* ... (Styles .navigation-controls et .action-controls inchangés) ... */
+.navigation-controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+.action-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* ================================================= */
+/* 2. Tableau de l'Agenda (CORRECTION CLÉ ULTIME)    */
+/* ================================================= */
+
+#agenda table {
+  width: 90%;
+  max-width: 1000px; 
+  margin: 20px auto;
+  border-collapse: collapse;
+  /* MODIFIÉ : Fond de carte sombre */
+  background: #2a2a2a;
+  /* MODIFIÉ : Ombre pour mode sombre */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* ... (Règles display: table-row et display: table-cell inchangées) ... */
+#agenda table thead tr,
+#agenda table tbody tr {
+    display: table-row !important;
+}
+
+#agenda table th,
+#agenda table td {
+    display: table-cell !important;
+  
+    /* MODIFIÉ : Bordure sombre */
+    border: 1px solid #444; 
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle; 
+    min-width: 100px;
+    height: 50px;
+    /* MODIFIÉ : Couleur de texte par défaut pour les cellules */
+    color: #EAEAEA;
+}
+
+#agenda table th {
+  /* MODIFIÉ : En-tête orange */
+  background: #FF6600; 
+  color: white;
+}
+
+/* Style spécifique pour la colonne HEURE (la première td de chaque ligne) */
+#agenda table td:first-child {
+    /* MODIFIÉ : Orange clair, avec texte foncé pour le contraste */
+    background-color: #FFA500; 
+    color: #1a1a1a;
+    font-weight: 600;
+    cursor: default;
+    width: 80px;
+}
+
+/* MODIFIÉ : Couleurs Halloween pour les événements */
+.cell-ds {
+  /* Violet foncé */
+  background-color: #330033;
+  color: #EAEAEA;
+}
+
+.cell-devoir {
+  /* Violet plus clair (Indigo) */
+  background-color: #4B0082; 
+  color: #EAEAEA;
+}
+
+/* Effet au survol pour les cellules interactives */
+#agenda table td:not(:first-child):hover {
+    /* MODIFIÉ : Ombre interne orange */
+    box-shadow: inset 0 0 0 2px #FF6600; 
+}
+
+
+/* --- 3. Modals --- */
+#modal, 
+#detail-modal { 
+    display: none; 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    /* MODIFIÉ : Fond semi-transparent plus sombre */
+    background: rgba(0, 0, 0, 0.7); 
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Le CONTENU du modal (votre formulaire) */
+.modal-content {
+  /* MODIFIÉ : Fond de carte sombre */
+  background: #2a2a2a; 
+  padding: 0 30px 30px 30px; 
+  border-radius: 12px; 
+  width: 90%;
+  max-width: 400px; 
+  text-align: left;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15); 
+  position: relative; 
+}
+
+/* Style des LABELS et CHAMPS du formulaire */
+#modal-form label {
+    display: block; 
+    margin-top: 20px; 
+    margin-bottom: 5px;
+    font-weight: 600;
+    /* MODIFIÉ : Couleur de texte claire (muted) */
+    color: #AAAAAA; 
+    font-size: 0.95rem;
+}
+
+#modal-form label:first-of-type {
+    margin-top: 0;
+}
+
+/* Style du Titre dans le Modal - CORRECTION ULTIME DE LA MARGE */
+.modal-content #modal-title { 
+    /* MODIFIÉ : Titre de modal orange */
+    background-color: #FF6600 !important; 
+    color: white !important; 
+
+    /* ... (Propriétés de marge et de layout inchangées) ... */
+    margin: 0; 
+    margin-left: -30px !important;
+    margin-right: -30px !important; 
+    margin-bottom: 20px !important;
+    padding: 15px 20px;
+    width: calc(100% + 60px); 
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+/* Bouton pour fermer le modal (le "X") - Positionnement garanti */
+.close {
+    position: absolute;
+    top: 10px; 
+    right: 15px; 
+    color: white !important; /* Blanc sur fond orange */
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1; 
+    z-index: 10; 
+}
+
+.close:hover {
+    color: #EAEAEA !important; /* Léger gris au survol */
+}
